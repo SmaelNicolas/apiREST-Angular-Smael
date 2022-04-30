@@ -1,0 +1,35 @@
+<div class="buttonsContainer">
+    <button mat-raised-button color="primary" (click)="getUsers()">Obtener Datos</button>
+    <button mat-raised-button color="primary" (click)="deleteUser()">Borrar Usuario ID 4</button>
+    <button mat-raised-button color="primary" (click)="saveUser(2,'Nicolas','Smael',31,'nico.smael@gmail.com')">Crear
+        Usuario</button>
+    <button mat-raised-button color="primary" (click)="updateUser(3)">Modificar Usuario ID 3</button>
+
+</div>
+
+<ul>
+    <li *ngFor="let user of users">
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{user.lastName}} {{user.name}}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>
+                    <mat-icon>assignment_ind</mat-icon> {{user.id}}
+                </p>
+                <p>
+                    <mat-icon>verified_user</mat-icon> {{user.lastName}} {{user.name}}
+                </p>
+                <p>
+                    <mat-icon> sentiment_satisfied_alt</mat-icon> {{user.age}} Años
+                </p>
+                <p>
+                    <mat-icon> email</mat-icon> {{user.email}}
+                </p>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+    </li>
+</ul>
